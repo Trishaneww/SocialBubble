@@ -1,23 +1,53 @@
-# SocialBubble
+# Module18Challenge
 
-## Overview
+## Description
 
-SocialBubble is a social media backend framework that uses MongoDB. SocialBubble allows one to create users, add other users as friends, create thoughts, and add reactions! Dont worry about any mistakes, as you can delete anything you do!
+The motivation for this project was to create a social media backend functionality with using a NoSQL database. The database used was MongoDB and the functionality added to this application is to create users, add other users as friends, create thoughts, add reactions(comments) to those thoughts and be able to delete any of those things made. 
 
 ## Installation
 
-- Clone this repository to your local machine
-- Open your terminal and install all required packages using 'npm i'
-- Run'npm run test' to have access to the localhost
-- Using Insomnia, run and test desired fetch methods
+The following is a step by step instruction on how to download the source code of the project and develop with it:
 
-Link to [youtube walkthrough](https://www.youtube.com/watch?v=2g6jhYurmxY)
+- Head to https://github.com/ConstantMotion1/Module18Challenge and git clone the https link
+- Open git bash terminal and install all packages used but typing 'npm i'
+- To run the localhost type 'npm run test'
+- open Insomnia and run fetch methods with that
 
-## Credit
+## Usage
 
-### Trishane Wijeyawickrema
-Link to Trishane's [GitHub Profile](https://github.com/Trishaneww)
+To use this application: 
+
+- Follow instructions from the 'installation tab'
+- /api/thoughts
+  router.route('/').get(getThoughts).post(createThought);
+
+  /api/thoughts/:thoughtId
+  router.route('/:thoughtId').get(getSingleThought).put(updateThought).delete(deleteThought);
+
+  /api/users/:userId/friends
+  router.route('/:thoughtId/reactions').put(addReaction);
+
+  /api/users/:userId/friends/:friendsId
+  router.route('/:thoughtId/reactions/:reactionId').delete(removeReaction);
+
+- /api/users
+  router.route('/').get(getUsers).post(createUser);
+
+  /api/users/:userId
+  router.route('/:userId').get(getSingleUser).put(updateUser).delete(deleteUser);
+
+  /api/users/:userId/friends
+  router.route('/:userId/friends').put(addFriend);
+
+  /api/users/:userId/friends/:friendsId
+  router.route('/:userId/friends/:friendsId').delete(removeFriend);
 
 ## License
 
-N/A
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Link
+
+The following is the link to the video showing the functionsality of the controllers:
+
+https://drive.google.com/file/d/1fFI4ixTp_oTjrRmaihubkje5wjAY_Of6/view
